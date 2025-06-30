@@ -1,0 +1,12 @@
+{
+  "name": "playwright-mcp-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "mcp:run": "playwright-mcp-server run --file prompts.txt --output generated-tests",
+    "test": "npx playwright test generated-tests"
+  },
+  "devDependencies": {
+    "@executeautomation/playwright-mcp-server": "^1.0.5",
+    "@playwright/test": "^1.35.0"
+  }
+}
