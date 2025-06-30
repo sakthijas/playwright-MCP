@@ -20,15 +20,28 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+            npm ci
+            sleep 5
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
       - name: Generate tests from prompts
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: npm run mcp:run
+            OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+            echo "Running MCP server to generate tests"
+            npm run mcp:run
+
+      - name: List generated tests (debug)
+        run: |
+            if [ -d "generated-tests" ]; then
+            echo "Generated tests:"
+            ls -la generated-tests
+            else
+            echo "No generated tests directory found"
+            fi
 
       - name: Run generated tests
         run: npm test

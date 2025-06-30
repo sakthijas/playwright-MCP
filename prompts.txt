@@ -1,1 +1,2 @@
-Login to https://www.saucedemo.com/ and verify successful login with valid credentials.
+Go to https://www.saucedemo.com/v1/
+Login with username "standard_user" and password "secret_sauce"

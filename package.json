@@ -2,7 +2,7 @@
   "name": "playwright-mcp-demo",
   "version": "1.0.0",
   "scripts": {
-    "mcp:run": "playwright-mcp-server run --file prompts.txt --output generated-tests",
+    "mcp:run": "playwright-mcp-server run --file prompts.txt --output generated-tests --debug",
     "test": "npx playwright test generated-tests"
   },
   "devDependencies": {
